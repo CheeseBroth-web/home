@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ちーずの処｜cheese portfolio</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 変数の定義：モダンヴィンテージな配色 */
+        :root {
+            /* ライトモード：羊皮紙のような温かい白 */
+            --bg-color: #f5f2ed;
+            --text-color: #2d2d2d;
+            --accent-color: #8b5a2b;
+            --card-bg: #ffffff;
+            --border-color: #d1cdc4;
+            --btn-hover: #8b5a2b;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* ダークモード：スタジオ向けの深いチャコール */
+                --bg-color: #1a1a1a;
+                --text-color: #d1d1c1;
+                --accent-color: #b8860b;
+                --card-bg: #242424;
+                --border-color: #3d3d3d;
+                --btn-hover: #b8860b;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* ヘッダーデザイン */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+        }
+
+        /* セクション共通設定 */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* カード型レイアウト */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 650px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-icon {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .card h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* リンクボタンエリア */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .link-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 24px;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            background: transparent;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background-color: rgba(184, 134, 11, 0.05);
+        }
+
+        /* 特別なボタン（友人やメインなど） */
+        .btn-highlight {
+            border-color: var(--accent-color);
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            letter-spacing: 0.1em;
+        }
+
+        /* 強調テキスト */
+        .status-tag {
+            font-size: 0.7rem;
+            background: var(--accent-color);
+            color: var(--bg-color);
+            padding: 2px 8px;
+            border-radius: 10px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>ちーずの処</h1>
+            <p class="subtitle">cheese portfolio</p>
+        </header>
+
+        <section>
+            <h2>自己紹介</h2>
+            <p>今のところ何もしていません。ただ、穏やかに生きています。</p>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <div class="card-icon"><i data-lucide="music"></i></div>
+                <h3>Engineering <span class="status-tag">Preparation</span></h3>
+                <p>何も作っていないがとりあえずCubaseを購入。(2025/10購入)</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon"><i data-lucide="book-open"></i></div>
+                <h3>Creative <span class="status-tag">Conceptual</span></h3>
+                <p>10年ほど、壮大な構想だけが脳内に存在しています。いまだ動きはない。</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i data-lucide="palette"></i></div>
+                <h3>Art <span class="status-tag">Future</span></h3>
+                <p>数百年後、1枚10億の価値がつく可能性を秘める。</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i data-lucide="gamepad-2"></i></div>
+                <h3>Development <span class="status-tag">Ideal</span></h3>
+                <p>ブラウザで動作する、簡単なものを作りたいです。</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="links-container">
+                <div class="link-group">
+                    <a href="http://www.youtube.com/@%E3%83%81%E3%83%BC%E3%82%BA%E3%81%AB%E3%81%8D" class="btn btn-highlight">
+                        <i data-lucide="youtube"></i> YouTube (Main)
+                    </a>
+                    <a href="http://www.youtube.com/@%E3%82%B9%E3%83%B3%E3%83%89%E3%82%A5%E3%83%96%E3%83%81%E3%82%B2%E3%81%AE%E9%BB%92" class="btn">
+                        <i data-lucide="youtube"></i> YouTube (Sub)
+                    </a>
+                    <a href="x.com/CheeseBro_0503" class="btn">
+                        <i data-lucide="twitter"></i> X / Twitter
+                    </a>
+                    <a href="https://github.com" class="btn">
+                        <i data-lucide="github"></i> GitHub
+                    </a>
+                </div>
+
+                <div class="link-group">
+                    <a href="https://sunnies.holiday/" class="btn" style="opacity: 0.8;">
+                        <i data-lucide="users"></i> Friend's Site
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 ちーずの処 - Stray Gold.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Lucideアイコンを初期化
+        lucide.createIcons();
+    </script>
+</body>
+</html>
