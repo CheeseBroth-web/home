@@ -8,7 +8,6 @@
     <style>
         /* 変数の定義：モダンヴィンテージな配色 */
         :root {
-            /* ライトモード：羊皮紙のような温かい白 */
             --bg-color: #f5f2ed;
             --text-color: #2d2d2d;
             --accent-color: #8b5a2b;
@@ -19,7 +18,6 @@
 
         @media (prefers-color-scheme: dark) {
             :root {
-                /* ダークモード：スタジオ向けの深いチャコール */
                 --bg-color: #1a1a1a;
                 --text-color: #d1d1c1;
                 --accent-color: #b8860b;
@@ -44,7 +42,6 @@
             padding: 60px 20px;
         }
 
-        /* ヘッダーデザイン */
         header {
             text-align: center;
             margin-bottom: 80px;
@@ -64,7 +61,6 @@
             letter-spacing: 0.3em;
         }
 
-        /* セクション共通設定 */
         section {
             margin-bottom: 60px;
         }
@@ -77,7 +73,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* カード型レイアウト */
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -125,7 +120,6 @@
             opacity: 0.9;
         }
 
-        /* リンクボタンエリア */
         .links-container {
             display: flex;
             flex-direction: column;
@@ -161,12 +155,10 @@
             background-color: rgba(184, 134, 11, 0.05);
         }
 
-        /* 特別なボタン（友人やメインなど） */
         .btn-highlight {
             border-color: var(--accent-color);
         }
 
-        /* フッター */
         footer {
             text-align: center;
             margin-top: 100px;
@@ -175,7 +167,6 @@
             letter-spacing: 0.1em;
         }
 
-        /* 強調テキスト */
         .status-tag {
             font-size: 0.7rem;
             background: var(--accent-color);
@@ -238,7 +229,7 @@
                     <a href="https://x.com/CheeseBro_0503" class="btn" target="_blank" rel="noopener noreferrer">
                         <i data-lucide="twitter"></i> X / Twitter
                     </a>
-                    <a href="https://github.com" class="btn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/CheeseBroth-web" class="btn" target="_blank" rel="noopener noreferrer">
                         <i data-lucide="github"></i> GitHub
                     </a>
                 </div>
@@ -256,17 +247,16 @@
         </footer>
     </div>
 
+    <!-- アイコン初期化 -->
     <script>
-        // Lucideアイコンを初期化
-<script>
         lucide.createIcons();
     </script>
 
-    <!-- 追記：CheeseBroth Modules の読み込み -->
-    <!-- サイドバー・ツリー表示モジュール（リポジトリ自動取得版） -->
+    <!-- モジュール読み込み -->
+    <!-- サイドバー：Pagesリポジトリを自動取得して一覧表示 -->
     <script src="https://cdn.jsdelivr.net/gh/CheeseBroth-web/Modules/sidebar-tree.js"></script>
     
-    <!-- BGMプレイヤー・モジュール -->
+    <!-- BGMプレイヤー：右下ボタン -->
     <script src="https://cdn.jsdelivr.net/gh/CheeseBroth-web/Modules/bgm-player.js"></script>
 
 </body>
